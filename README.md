@@ -32,3 +32,6 @@ La aplicación contiene:
 
 ## Notas
 Por ahora sólo se manejan datos de ejemplo y no existe integración con backend.
+## Notas
+La aplicación actualmente sólo contiene una interfaz básica de bienvenida y muestra la URL de la API configurada en el archivo `.env`.
+
