@@ -1,0 +1,20 @@
+{
+  "expo": {
+    "name": "baggie-app-expo-react-native",
+    "slug": "baggie-app-expo-react-native",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "edgeToEdgeEnabled": true
+    },
+    "web": {}
+  }
+}
