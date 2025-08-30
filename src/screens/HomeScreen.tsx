@@ -17,6 +17,9 @@ export default function HomeScreen({ navigation }: Props) {
       <Pressable style={styles.button} onPress={() => navigation.navigate('CreateDestination')}>
         <Text style={styles.buttonText}>Create Trip</Text>
       </Pressable>
+      <Pressable style={styles.button} onPress={() => navigation.navigate('VisitedMap')}>
+        <Text style={styles.buttonText}>World Map</Text>
+      </Pressable>
       <Text style={styles.env}>API URL: {apiUrl}</Text>
     </View>
   );
