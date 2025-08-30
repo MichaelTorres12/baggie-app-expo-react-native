@@ -4,4 +4,5 @@ export type RootStackParamList = {
   TripDetails: { name: string };
   CreateDestination: undefined;
   CreateAccommodation: undefined;
+  VisitedMap: undefined;
 };

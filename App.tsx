@@ -6,6 +6,7 @@ import ListsScreen from './src/screens/ListsScreen';
 import TripDetailsScreen from './src/screens/TripDetailsScreen';
 import CreateDestinationScreen from './src/screens/CreateDestinationScreen';
 import CreateAccommodationScreen from './src/screens/CreateAccommodationScreen';
+import VisitedMapScreen from './src/screens/VisitedMapScreen';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -29,6 +30,11 @@ export default function App() {
           name="CreateAccommodation"
           component={CreateAccommodationScreen}
           options={{ title: 'Accommodation' }}
+        />
+        <Stack.Screen
+          name="VisitedMap"
+          component={VisitedMapScreen}
+          options={{ title: 'World Map' }}
         />
       </Stack.Navigator>
     </NavigationContainer>
