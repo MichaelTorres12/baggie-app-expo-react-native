@@ -1,29 +1,36 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { RootStackParamList } from './src/types';
+import HomeScreen from './src/screens/HomeScreen';
+import ListsScreen from './src/screens/ListsScreen';
+import TripDetailsScreen from './src/screens/TripDetailsScreen';
+import CreateDestinationScreen from './src/screens/CreateDestinationScreen';
+import CreateAccommodationScreen from './src/screens/CreateAccommodationScreen';
+
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export default function App() {
-  const apiUrl = process.env.EXPO_PUBLIC_API_URL ?? 'Not set';
-
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Welcome to Baggie!</Text>
-      <Text>API URL: {apiUrl}</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Baggie' }} />
+        <Stack.Screen name="Lists" component={ListsScreen} options={{ title: 'My Lists' }} />
+        <Stack.Screen
+          name="TripDetails"
+          component={TripDetailsScreen}
+          options={({ route }) => ({ title: route.params.name })}
+        />
+        <Stack.Screen
+          name="CreateDestination"
+          component={CreateDestinationScreen}
+          options={{ title: 'Create Trip' }}
+        />
+        <Stack.Screen
+          name="CreateAccommodation"
+          component={CreateAccommodationScreen}
+          options={{ title: 'Accommodation' }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 16,
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 16,
-  },
-});
